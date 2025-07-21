@@ -26,4 +26,3 @@ if department_person == ("petén" or "Petén" or "Alta Verapaz" or "alta verapaz
             print(f"Su nombre no puede ser menor a 5 letras")
     else:
         print(f"No es mayor de edad")
-
