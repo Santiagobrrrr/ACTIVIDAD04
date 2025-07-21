@@ -1,28 +1,29 @@
-full_name_person = input(f"Ingrese su nombre completo: ")
-dpi_person = input(f"Ingrese su dpi sin guiones ni espacios: ")
-department_person = input(f"Ingrese su departamento: ")
-year_birth_person = int(input(f"Ingrese su ano de nacimiento: "))
-
-if department_person != ("petén" or "Petén" or "Alta Verapaz" or "alta verapaz"):
+department_person = input("Ingrese un departamento: ")
+if department_person.lower() not in ["petén","alta verapaz"]:
+    year_birth_person = int(input("Ingrese su año de nacimiento: "))
     if year_birth_person <= 2007:
-        if len(full_name_person) > 5:
-            if len(dpi_person) == 13:
+        dpi_person = input("Ingrese su dpi sin guiones ni espacio: ")
+        if len(dpi_person) == 13:
+            full_name_person = input("Ingrese su nombre: ")
+            if len(full_name_person) > 5:
                 print(f"Bienvenido {full_name_person}, su centro de votación esta en: {department_person}")
             else:
-                print(f"Su DPI es inválido")
+                print(f"Su nombre tiene que ser mayor de 5 letras")
         else:
-            print(f"Su nombre no puede ser menor a 5 letras")
+            print(f"DPI invalido")
     else:
-        print(f"No es mayor de edad")
-
-if department_person == ("petén" or "Petén" or "Alta Verapaz" or "alta verapaz"):
-    if year_birth_person <= 2008:
-        if len(full_name_person) > 5:
-            if len(dpi_person) == 13:
+        print(f"Es menor de edad, no puede votar")
+else:
+    year_birth_person = int(input("Ingrese su año de nacimiento: "))
+    if year_birth_person >= 2008:
+        dpi_person = input("Ingrese su dpi sin guiones ni espacio: ")
+        if len(dpi_person) == 13:
+            full_name_person = input("Ingrese su nombre: ")
+            if len(full_name_person) > 5:
                 print(f"Bienvenido {full_name_person}, su centro de votación esta en: {department_person}")
             else:
-                print(f"Su dpi es inválido")
+                print(f"Su nombre tiene que ser mayor de 5 letras")
         else:
-            print(f"Su nombre no puede ser menor a 5 letras")
+            print(f"DPI invalido")
     else:
-        print(f"No es mayor de edad")
+        print(f"Es menor de edad, no puede votar")
